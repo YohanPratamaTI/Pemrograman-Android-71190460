@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -16,7 +17,9 @@ class MainActivity : AppCompatActivity() {
             val user = inputUsername.text.toString()
             val pass = inputPassword.text.toString()
             if (pass == "1234") {
-                startActivity(Intent(this@MainActivity, Home::class.java))
+                val i = Intent(this, Home::class.java);
+                i.putExtra("username", user.toString())
+                startActivity(i)
             } else {
                 Toast.makeText(applicationContext, "Username atau Password SALAH!!!", Toast.LENGTH_LONG).show()
             }

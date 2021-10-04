@@ -11,7 +11,7 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        val user = intent.getStringExtra("user")
+        val user = intent.getStringExtra("username")
 
         val home = findViewById<TextView>(R.id.home)
         home.text = "Selamat Datang $user !!!"
